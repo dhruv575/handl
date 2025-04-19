@@ -146,8 +146,15 @@ const Login = () => {
     
     if (validateForm()) {
       try {
-        await login(formData);
-        navigate('/dashboard');
+        const result = await login(formData);
+        
+        // Small delay to ensure state updates are complete
+        setTimeout(() => {
+          // Only navigate if user data is available
+          if (result && result.token) {
+            navigate('/dashboard');
+          }
+        }, 100);
       } catch (err) {
         console.error('Login error:', err);
       }

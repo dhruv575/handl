@@ -194,10 +194,20 @@ const Register = () => {
       try {
         // Remove confirmPassword before sending to API
         const { confirmPassword, ...registerData } = formData;
-        await register(registerData);
-        navigate('/dashboard');
+        
+        // Await the register call and store the result
+        const result = await register(registerData);
+        
+        // Log the result for debugging
+        console.log('Registration successful:', result);
+        
+        // Navigate to dashboard if we have a token
+        if (result && result.token) {
+          navigate('/dashboard');
+        }
       } catch (err) {
         console.error('Registration error:', err);
+        // Error is already set in the AuthContext
       }
     }
   };
