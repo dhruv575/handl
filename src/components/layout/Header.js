@@ -638,42 +638,43 @@ const Header = () => {
         
         <UserSection>
           {isAuthenticated ? (
-            <>
-              <UserMenu onClick={toggleUserMenu}>
-                <UserAvatar>
-                  {user?.name?.charAt(0) || 'U'}
-                </UserAvatar>
-                
-                <UserMenuDropdown isOpen={userMenuOpen}>
-                  <UserDropdownContent>
-                    <UserMenuItem to={`/profile/${user?.username}`} onClick={() => setUserMenuOpen(false)}>
-                      <HiOutlineUser />
-                      Profile
-                    </UserMenuItem>
-                    <UserMenuItem as="button" onClick={handleOpenProfileModal}>
-                      <HiOutlinePencil />
-                      Edit Profile
-                    </UserMenuItem>
-                    <UserMenuItem as="button" onClick={() => {
-                      setUserMenuOpen(false);
-                      handleLogout();
-                    }}>
-                      <HiOutlineLogout />
-                      Logout
-                    </UserMenuItem>
-                  </UserDropdownContent>
-                </UserMenuDropdown>
-              </UserMenu>
-            </>
+            <UserMenu onClick={toggleUserMenu}>
+              <UserAvatar>
+                {user?.name?.charAt(0) || 'U'}
+              </UserAvatar>
+              
+              <UserMenuDropdown isOpen={userMenuOpen}>
+                <UserDropdownContent>
+                  <UserMenuItem to={`/profile/${user?.username}`} onClick={() => setUserMenuOpen(false)}>
+                    <HiOutlineUser />
+                    Profile
+                  </UserMenuItem>
+                  <UserMenuItem as="button" onClick={handleOpenProfileModal}>
+                    <HiOutlinePencil />
+                    Edit Profile
+                  </UserMenuItem>
+                  <UserMenuItem as="button" onClick={() => {
+                    setUserMenuOpen(false);
+                    handleLogout();
+                  }}>
+                    <HiOutlineLogout />
+                    Logout
+                  </UserMenuItem>
+                </UserDropdownContent>
+              </UserMenuDropdown>
+            </UserMenu>
           ) : (
-            <AuthButtons>
-              <Button as={Link} to="/login" variant="text">
-                Login
-              </Button>
-              <Button as={Link} to="/register" variant="primary">
-                Sign Up
-              </Button>
-            </AuthButtons>
+            // Only show auth buttons on desktop, not mobile
+            <Nav>
+              <AuthButtons>
+                <Button as={Link} to="/login" variant="text">
+                  Login
+                </Button>
+                <Button as={Link} to="/register" variant="primary">
+                  Sign Up
+                </Button>
+              </AuthButtons>
+            </Nav>
           )}
           
           <MobileMenuButton onClick={toggleMobileNav}>
@@ -734,7 +735,7 @@ const Header = () => {
                 Login
               </MobileNavButton>
               
-              <MobileNavButton as="button" onClick={() => handleNavigation('/signup')} variant="primary">
+              <MobileNavButton as="button" onClick={() => handleNavigation('/register')} variant="primary">
                 <HiOutlineUserAdd />
                 Sign Up
               </MobileNavButton>
