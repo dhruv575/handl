@@ -145,14 +145,6 @@ These steps are to be followed by Cursor Agent running Claude 3.7 Sonnet. Each s
 2. We want the frontend to feel responsive and provide micro feedback  
 3. This web application will most likely be used predominantly on mobile devices. Mobile compatibility is a top priority for this project.
 
-**Necessary Keys**
-
-JWT\_SECRET=fde5be3fca2f594bb39592a9d3781f5dabd1226bfea2d6fc1a51d65fdf031d23b05d4c8e46feb01531c9be214411bbec1523f735139db8f6d15320974e2d5ef3503db53ca1502a0f9489d310f55100baabcf6ebb3b10e975f3b445f70dee4c8c2bced6618ecf0f13ec4029914e05935bc02e7849a55348899fbba06bf6882ef1fcf67e33ce15b8afc08fc81d60868792f69f2a407301bb2f421655dfd8bbfe3481b86fe5ff01f02b30de35df5a35ec3c58a9b7a93b0baddded92c453a06fc5a2bd72ae739ee4ddc785fce6399dfe97f74945ef06023a64cb173800dbd85f10ba8847f9f8391422683d365bfdcabf7949d70a54f919c304463d1448820d6aa1dc  
-CLOUDINARY\_CLOUD\_NAME="djt4gxy9s"  
-CLOUDINARY\_API\_KEY="551626585336911"  
-CLOUDINARY\_API\_SECRET="d6HCnsoaDBypM1dXCReFoJqkZDA"  
-OPENAI\_API\_KEY="sk-proj-v7uw\_Ehnon3QpMJsLMnW1swNQVU4-MSfxFe1qTSQczFhmOxPBa0KuHphNApammqWTK5vl5Hi9KT3BlbkFJOtBAsWQkGq-YbtQNhtsJRRVOiAwWbLP0niKjxMcCDWKuZSqkWKhiFOzqGoJHf4Jt3pGcF2PzIA"
-
 **Cloudinary Example File**
 
 const express \= require('express');  
